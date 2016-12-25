@@ -1,12 +1,8 @@
 package main
 
-import (
-	"flag"
-	"fmt"
-	"strconv"
-)
+import "fmt"
 
-func FizzBuzz(n int) string {
+func fizzBuzz(n int) string {
 	if n%3 == 0 && n%5 == 0 {
 		return "FizzBuzz"
 	} else if n%3 == 0 {
@@ -18,13 +14,7 @@ func FizzBuzz(n int) string {
 }
 
 func main() {
-	flag.Parse()
-	if len(flag.Args()) != 1 {
-		panic("expected a single numeric argument")
+	for i := 1; i <= 100; i++ {
+		fmt.Printf("%d: %s\n", i, fizzBuzz(i))
 	}
-	n, err := strconv.Atoi(flag.Arg(0))
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(FizzBuzz(n))
 }
