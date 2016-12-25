@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"flag"
+	"fmt"
+)
+
+var iterations = flag.Int("i", 100, "number of iterations to calculate")
 
 func fizzBuzz(n int) string {
 	switch {
@@ -16,7 +21,8 @@ func fizzBuzz(n int) string {
 }
 
 func main() {
-	for i := 1; i <= 100; i++ {
+	flag.Parse()
+	for i := 1; i <= *iterations; i++ {
 		fmt.Printf("%d: %s\n", i, fizzBuzz(i))
 	}
 }
