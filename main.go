@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"strconv"
 )
 
 var iterations = flag.Int("i", 100, "number of iterations to calculate")
@@ -16,7 +17,7 @@ func fizzBuzz(n int) string {
 	case n%5 == 0:
 		return "Buzz"
 	default:
-		return fmt.Sprintf("%d", n)
+		return strconv.Itoa(n)
 	}
 }
 
