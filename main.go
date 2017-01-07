@@ -10,7 +10,7 @@ var iterations = flag.Int("i", 100, "number of iterations to calculate")
 
 func fizzBuzz(n int) string {
 	switch {
-	case n%3 == 0 && n%5 == 0:
+	case n%15 == 0:
 		return "FizzBuzz"
 	case n%3 == 0:
 		return "Fizz"
